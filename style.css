@@ -1,0 +1,308 @@
+/* Global Styles */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1F2933;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from animations/absolute elements */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color) !important;
+}
+
+/* Override Bootstrap Colors */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Custom Color Variables (derived from original design) */
+:root {
+    --primary-color: #28334f;
+    --secondary-color: #1F2933;
+    --accent-color: #fbbf24;
+    --light-bg: #f8fafc;
+}
+
+/* -------------------------------------------
+   HERO SECTION
+------------------------------------------- */
+.medical-hero {
+    min-height: 100vh;
+    /* Full viewport height */
+    background-image: url("Image/banner.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 80px;
+    /* Space for navbar if added later */
+    padding-bottom: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.4) 100%);
+    z-index: 1;
+}
+
+@media (max-width: 991.98px) {
+    .hero-overlay {
+        background: rgba(255, 255, 255, 0.9);
+        /* More solid on mobile for readability */
+    }
+
+    .medical-hero {
+        text-align: center;
+    }
+}
+
+/* Hero Elements */
+.hero-tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+/* Customizing Bootstrap Buttons to match theme */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.btn-primary:hover {
+    background-color: #1a2236;
+    color: white;
+    border-color: #1a2236;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #28334f;
+    border-color: #28334f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+/* Hero Form */
+.hero-form-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* -------------------------------------------
+   SECTIONS & COMPONENTS
+------------------------------------------- */
+
+/* Feature Pills (Best Service Section) */
+.feat-pill {
+    font-size: 1rem;
+    padding: 10px 24px !important;
+    cursor: default;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0 !important;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feat-pill:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(40, 51, 79, 0.2);
+}
+
+/* Service Collage Images */
+.collage-container img {
+    transition: transform 0.3s ease;
+}
+
+.collage-container:hover .item-1 {
+    transform: translateY(-10px);
+}
+
+.collage-container:hover .item-2 {
+    transform: translateY(10px);
+}
+
+/* Rating Badge Animation */
+.rating-badge {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Feature Cards */
+.feature-box {
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 200px;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Welcome Section Background */
+.welcome-section {
+    background-image: url("Image/Backbanner.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+
+/* Testimonials */
+.reviews-scroll-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.reviews-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* FAQ Accordion Customization */
+.accordion-button:not(.collapsed) {
+    color: white;
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(40, 51, 79, 0.1);
+}
+
+.accordion-button::after {
+    filter: invert(1) brightness(2);
+    /* Make chevron white */
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-image: url("Image/Backbanner.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Pulse Animation for CTA Button */
+.pulse-btn {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* Responsive Adjustments derived from Bootstrap Breakpoints */
+@media (max-width: 767.98px) {
+    h1.display-4 {
+        font-size: 2.5rem;
+        /* Smaller heading on mobile */
+    }
+
+    .rating-badge {
+        width: 100px !important;
+        height: 100px !important;
+        right: 0 !important;
+    }
+
+    .collage-container {
+        min-height: 400px;
+        /* Smaller container on mobile */
+    }
+
+    .item-3 {
+        width: 250px !important;
+        height: 250px !important;
+    }
+}
